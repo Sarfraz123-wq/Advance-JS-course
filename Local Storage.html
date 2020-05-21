@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+
+    <!-- 
+        It is read only property window object. It stores data in a web
+        browser specifically to the domain and protocol. It doesn't get
+        sent to the server as it is stored locally in the web browser 
+        with no expiration date. The data will not be deleted when 
+        browser is closed and reopened.  
+
+     -->
+     <script>
+         //for google chrome.
+         // dev tool..>applications..>local storage.
+         // also we can console.log
+            //Method1 setItem
+            //window.localStorage.setItem('username','sarfraz');
+            window.localStorage.setItem('email','keharsarfraz');
+            // ab me browser band krn system off krdon ye data delete nahi
+            //hoga ab ye permenant hogaya mere system me.
+            console.log(localStorage.length);//2
+
+            //Method2 getItem
+            console.log(localStorage.getItem('email'));
+
+            //Method3 key.
+            console.log(localStorage.key(0));
+
+            //Method4. clear
+            localStorage.clear();
+     </script>
+
+
+</body>
+</html>

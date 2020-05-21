@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform" id="myFormId">
+        Username: <input type="text" name="m_username" id="usernameId"><br><br>
+        Password: <input type="password" name="m_password"><br><br>
+        <input type="submit" name="m_submit" value="Submit"><br><br>
+   </form>
+                    <hr><hr>
+   <form action="" name="yourform">
+    Username: <input type="text" name="y_username" id="y_usernameID" 
+    value="sarfraz"><br><br>
+    Password: <input type="password" name="y_password"><br><br>
+    <input type="submit" name="y_submit" value="Submit"><br><br>
+    </form>
+
+    <script>
+        //Using getElementById...
+        var usrname = document.getElementById('usernameId');
+        console.log(usrname.name);  
+        console.log(usrname.type);   
+        console.log(usrname.id)
+
+
+        //Elements [indexNo]
+        var a = document.myform.elements[1];
+        console.log(a);
+        //ab password ki attr ko access..
+        console.log(a.name);
+        console.log(a.type);
+
+        //.elements likhne k baghair b hojata he.
+        var a = document.myform.usernameId;
+        //myform se form access hogaya usernameId se id hm id ya
+        // name se b access kar sakte hain  
+        console.log(a.name);
+        console.log(a.type);
+
+        //hm jo user input karega usko b dekh sakte hain using value attr.
+        var usr = document.getElementById('y_usernameID');
+        console.log(usr.value);
+        //also we can change.
+        usr.value = 'basit';
+
+    </script>
+</body>
+</html>

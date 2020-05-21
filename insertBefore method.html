@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3> JS FRAMEWORKS.  </h3>
+        <ul id="myul">
+            <li id="jq"> Jquery JS </li>
+            <li id="myang">Angular JS</li>
+            <li id="react"> React JS </li>
+            <li id="myd3">D3 JS </li>
+
+        </ul>
+
+        <ul>
+            <li id="java"> Java Programming </li>
+            <li id="c++"> C++ Programming </li>
+            <li id="php"> Php Programming </li>
+
+        </ul>
+
+    </div>
+    <script>
+        //parentNode.insertBefore(newNode,refNode)
+
+        let parentNode = document.getElementById('myul');
+        let newNode = document.createElement('li');
+        // appending text in newly list using textContent
+        // we can insert text through various mrthods by creating
+        // textNodes & inner html etc..
+        newNode.textContent = 'React Native';
+        
+        // Refrence node means where to push this newly node
+        // ref means just before this one.
+        let refNode = document.getElementById('myang');
+        // newly list should be insert before angular js.
+        parentNode.insertBefore(newNode,refNode)
+        console.log(parentNode);//done
+
+        // if i not mention here the ref node then
+        //newly element or node will be inserted at the end.
+        // but second argument is must give it null otherwise 
+        //it will give an error
+        
+
+        // When insert existing node means move element from
+        // one place to another.
+
+        var parent = document.getElementById('myul');
+        var moveElement = document.getElementById('jq');
+        var refElement = document.getElementById('react');
+        parent.insertBefore(moveElement,refElement);
+        console.log(parent);//hogaya move..
+    
+        // insert text nodes..
+        var txtnode = document.createTextNode("Hello World");
+        parent.insertBefore(txtnode,refElement);//hogaya...
+
+        // // Now the scenario is we have two ul and we have 
+        // to push element of different ul into another
+        // how it could be?
+
+        // we have to move php to just before react native.
+        var jao = document.getElementById('php');
+        var ref = document.getElementById('react')
+        parent.insertBefore(jao,ref);//hogaya.. 
+
+        // // jahan hamen koi cheez move karni ho ya add
+        // karni he usko parent ki id se access karte hain
+
+        
+
+
+    
+    </script>
+</body>
+</html>

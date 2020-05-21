@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="error"></div>
+    <form action="" name="form" id="myFormId">
+        Username: <input type="text" name="username" id="username"><small id="u_small">
+        </small><br><br>
+        Password: <input type="password" id="password" name="password">
+        <input type="submit" name="submit" value="Submit"><br><br>
+   </form>
+
+
+   <script>
+       var name = document.getElementById('username');
+       var password = document.getElementById('password');
+       var form = document.getElementById('myFormId');
+       var errorElement = document.getElementById('error');
+
+        form.addEventListener('submit',(e) => {
+            let msgs = []
+            if(username.value === '' || username.value == null)
+            {
+                msgs.push('Name is required');
+            }
+            if(password.value.length <= 6)
+            {
+                msgs.push('passowrd must be atleast 6 characters long');
+            }
+            if(password.value.length >= 20)
+            {
+                msgs.push('passowrd should be less than 20 characters');
+            }
+            if(password.value === 'password')
+            {
+                msgs.push('passowrd cant be pasword');
+            }
+            
+            if(msgs.length>0)
+            {
+                errorElement.innerText = msgs.join(',');
+                e.preventDefault();
+                
+
+            }
+
+        });
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- insert adjacent html method kisi b position pr
+    koi b element add karne k lye use hota he agar hm 
+    aik he element ko do different places pe add karte 
+    hain to wo move nahi hota he isme balke copy  hota he.
+    yehi difference he insert adjacent element or html
+    methods me. or isme newElement create nahi karenge 
+    jab text likhenge to usme tag banakr likhenge -->
+    <div id="mydiv">
+        <h1 id="myh1">Heading 1</h1>
+        <h2 id="myh2">Heading 2</h2>
+        <h3 id="myh3">Heading 3</h3>
+
+    </div>    
+
+    <script>
+        // formula
+        // targetElement.insertAdjacentHTML('position','element')
+        // position : 'beforebegin' | 'afterbegin' |
+        // 'beforeend' | 'afterend'..
+
+        var target = document.getElementById('myh2');
+        //var newElement = document.createElement('span');
+        var newElement = "<span> This is a span </span>";
+        // isme newElement create nahi karenge balke
+        // tag k sath likhenge..
+        target.insertAdjacentHTML('beforeend',newElement);
+        target.insertAdjacentHTML('afterend',newElement);
+       
+        var parentNode = document.getElementById('mydiv');
+        console.log(parentNode);//prints at both places.
+
+    </script>
+
+</body>
+</html>

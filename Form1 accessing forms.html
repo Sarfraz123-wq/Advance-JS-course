@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform" id="myFormId">
+        Username: <input type="text" name="m_username"><br><br>
+        Password: <input type="password" name="m_password"><br><br>
+        <input type="submit" name="m_submit" value="Submit"><br><br>
+   </form>
+                    <hr><hr>
+   <form action="" name="yourform">
+    Username: <input type="text" name="y_username"><br><br>
+    Password: <input type="password" name="y_password"><br><br>
+    <input type="submit" name="y_submit" value="Submit"><br><br>
+    </form>
+
+    <script>
+        //Method1. IndexNo.
+        //abhi hamare do forms hain.
+        console.log(document.forms[0]);
+        //Method2. Name Attribute.
+        console.log(document.forms['yourform']);
+        //Method3. Name Attribute using dot.
+        console.log(document.myform);
+        //Method4. getElementById.
+        console.log(document.getElementById('myFormId'));
+    </script>
+</body>
+</html>

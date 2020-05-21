@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myul">
+        <li> Item1 </li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>   
+
+    </ul>
+
+    <script>
+        var element = document.getElementById('myul');
+        //console.log(element);//ul->li...
+        console.log(element.innerHTML);//only inner part
+        //means only lists displays.
+
+        element.innerHTML ="";
+        console.log(element);//li empty
+        
+        element.innerHTML = "<li> Sarfraz</li> <li> Tahir </li>";
+        console.log(element.innerHTML);
+        //tahir and sarfraz
+         
+        // Inner html inner text ko replace krdeta he
+     document.getElementById('myul').innerHTML = "<li>Programming</li> <li> Coding </li>";
+    //programming, coding.
+
+    
+    </script>
+</body>
+</html>

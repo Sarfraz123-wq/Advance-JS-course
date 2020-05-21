@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="mytab">
+        <caption>My table caption </caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody id="mybody">
+            <tr>
+                <th>11</th>
+                <th>Rahul</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <th>22</th>
+                <th>Sonam</th>
+                <th id="mytd">PhP</th>
+            </tr>
+        </tbody>
+        
+        <tbody>
+            <tr>
+                <th>11</th>
+                <th>Rahul</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <th>22</th>
+                <th>Sonam</th>
+                <th>PhP</th>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th>55</th>
+                <th>Rohan</th>
+                <th>React</th>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        var table = document.getElementById('mytab');
+        var rows = table.rows;
+        // console.log(rows);//6
+        console.log(rows[0].cells.length);//3
+        console.log(rows[0].cells[0]);//ID
+        console.log(rows[2].cells.namedItem('mytd'));
+
+        // insert new cell in 0th row.
+        var newCell = rows[0].insertCell();//empty created
+        //console.log(newCell);
+        newCell.innerHTML = 'New Cell';
+        // In one line.
+        rows[1].insertCell().innerHTML = "Second Cell";
+
+        //For Delete.
+
+        //rows[0].deleteCell(0);//ID cell deleted
+
+
+    </script>
+</body>
+</html>

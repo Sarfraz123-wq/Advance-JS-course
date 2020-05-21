@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" name="myform" id="myFormId">
+        Username: <input type="text" name="m_username" id="usernameId"><small id="u_small">
+        </small><br><br>
+      
+        <input type="submit" name="m_submit" value="Submit"><br><br>
+   </form>
+   <script>
+       function validateData()
+       {
+           var ptrn = /^([^0-9\W]*)$/;
+           if(ptrn.test(document.myform.m_username.value))
+           {
+              // document.myform.m_username.style.backgroundColor = 'green';
+            //ye b sahih he color green ho raha he lekin koi clear msg nahi he.
+            document.getElementById('u_small').textContent = "User is valid";
+            document.getElementById('u_small').style.color = 'green';
+           }
+           else
+           {
+            //document.myform.m_username.style.backgroundColor = 'red';
+            document.getElementById('u_small').textContent = "User is Invalid";
+            document.getElementById('u_small').style.color = 'red';
+           }
+       }
+       document.myform.m_username.addEventListener('keyup',validateData);  
+       //yahan keyup ki jagaah blur b likh sakte hain lekin blur likhte waqt
+       //error nahi battata jab tab press krenge phr. 
+
+
+   </script>
+</body>
+</html>

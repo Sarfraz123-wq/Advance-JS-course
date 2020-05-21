@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myul">
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li>List 4</li>
+    </ul>
+
+    <script>
+        let element = document.getElementById('myul');
+        element.innerText = "pakistan";
+        console.log(element)
+        // ye srf text ko change krne k lye use hota he
+        // similar he innerHTML ki tarah lekin wo zyada 
+        // recommended he ye srf text k lye hai elemnt
+        // ya tag k lye nahi he
+        // outerText b he lekin wo b recommended nahi he.
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- insert adjacent element method kisi b position pr
+    koi b element add karne k lye use hota he agar hm 
+    aik he element ko do different places pe add karte 
+    hain to wo move hota he. -->
+    <div id="mydiv">
+        <h1 id="myh1">Heading 1</h1>
+        <h2 id="myh2">Heading 2</h2>
+        <h3 id="myh3">Heading 3</h3>
+
+    </div>    
+
+    <script>
+        // formula
+        // targetElement.insertAdjacentElement('position','element')
+        // position : 'beforebegin' | 'afterbegin' |
+        // 'beforeend' | 'afterend'..
+
+        var target = document.getElementById('myh2');
+        var newElement = document.createElement('span');
+        newElement.textContent = "This is a span";
+        // var newElement = "<span> This is a span </span>"
+        // ye is tarah error de raha he jab k html method
+        // is tarah likhte hain.
+        target.insertAdjacentElement('beforeend',newElement)
+        target.insertAdjacentElement('afterend',newElement);
+    
+       
+        var parentNode = document.getElementById('mydiv');
+        console.log(parentNode);//prints afterend because 
+        // it moves not printed again and again.
+
+    </script>
+
+</body>
+</html>

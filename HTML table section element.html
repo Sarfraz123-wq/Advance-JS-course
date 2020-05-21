@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        table{
+            font-weight: bold;
+        } -->
+    </style>
+</head>
+<body>
+     <!-- agar capion pehle se he hai to wo display karta
+     warna create karta he hm change b kar sakte hn. -->
+        <!-- Properties
+    ------------
+    caption
+    tHead
+    tFoot
+    rows
+    tBodies
+
+    Methods
+    ------------
+    createCaption()
+    deleteCaption()
+    createTHead()
+    deleteTHead()
+    createTFoot()
+    deleteTFoot()
+  -->
+
+    <table border="1" id="mytab">
+        <caption>My table caption </caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody id="mybody">
+            <tr>
+                <th>11</th>
+                <th>Rahul</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <th>22</th>
+                <th>Sonam</th>
+                <th>PhP</th>
+            </tr>
+        </tbody>
+        
+        <tbody>
+            <tr>
+                <th>11</th>
+                <th>Rahul</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <th>22</th>
+                <th>Sonam</th>
+                <th>PhP</th>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th>55</th>
+                <th>Rohan</th>
+                <th>React</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+       // isme mujhe kisi particular section ko target
+       //karna he 
+       var tbdy = document.getElementById('mybody');
+       var rows = tbdy.rows;
+       console.log(rows);//2 rows hain...
+       console.log(rows[0]);//using index no
+       //replace
+       rows[0].innerHTML = "<td> 100 </td> <td> yess </td><td> noo </td> "
+       //hogaya replace
+
+        var newRow = tbdy.insertRow(-1);
+        newRow.insertCell().innerHTML = "Neww";
+        console.log(tbdy)
+        //delete
+        tbdy.deleteRow(0);//hgyaa
+
+
+    </script>
+
+</body>
+</html>
