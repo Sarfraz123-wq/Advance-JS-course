@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .myclass1
+        {
+            background-color: blue;
+        }
+        .myclass2 
+        {
+            background-color: red;
+        }
+
+    </style>
+</head>
+    
+<body>
+    <p id="myp" class="myclass2 myclass3" style="color:aqua;">
+    Paragraph </p>
+
+    <script>
+        var parent = document.getElementById('myp');
+        var elementClass = parent.classList;
+        console.log(parent);
+       // console.log(elemenClass[0]);
+        console.log(elementClass.length);//2
+        console.log(elementClass.value);
+
+        // Method 1 item..> class name by indexing.
+        console.log(elementClass.item(0));//myclass2
+        // Method 2 add... add class single or multiple
+        elementClass.add("class4","class5");
+        console.log(parent);
+        // Methoda 3 remove.. remove single or mult.
+        elementClass.remove("class5","class4");
+        console.log(parent);
+        // Method 4 replace..
+        // isme pehle jo class likhenge wo replace hogi 
+        // or jo doosri likhenge wo new hojayegi
+        // jo new hogi usko kahin css den to recommended
+        // he taake farq nazar aaye.
+        elementClass.replace('myclass2','myclass1');
+        
+        //mene myclass1 pehle se he defined kari he style
+        // me ab bg blue hojayega.
+        console.log(parent);
+        // Method 5 contains.
+        var contains = elementClass.contains('myclass1');
+        console.log(contains);//true
+
+        // Method 6 toggle
+        // toggle matlab pehle delete karega phr le aayega
+        // phr delete krega phr add krega jitni bar use krnge.
+        elementClass.toggle('myclass1');
+        console.log(parent);
+        elementClass.toggle('myclass1');
+        console.log(parent);
+
+
+
+    </script>
+</body>
+</html>

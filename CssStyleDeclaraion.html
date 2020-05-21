@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myp" style="background-color:darkgrey; color: black !important;">
+    Paragraph </p>
+
+        <script>
+            var p = document.getElementById("myp");
+            var css = p.style;
+            //console.log(css.cssText);
+            css.cssText = "font-size: 70px; color: red";
+            console.log(p);
+            // we can set any css using cssText.
+            // jab hm cssText property use karte hain
+            // to jo pehle inlineCSS likhi hui he wo
+            // cancel hojayegi.
+            console.log(css.length);
+            getProp = css.getPropertyValue('font-size');
+            //jo b likhonga uska answer dega.
+            //agar property nahi hoga to output display nahi
+            // hoga
+            console.log(getProp);
+            var setProp = css.setProperty('font-weight', 'bold');
+            //hm isme 3 attributes de sakte hain pehla
+            //name jo font-weight likha he doosri uski
+            //value and 3sri priority k wo imp he ya ni.
+            // ye optional he
+            //hogaya bold.
+            console.log(p);
+            
+            //Priority method..
+            var priorityProp = css.getPropertyPriority('color');
+            console.log(priorityProp);
+
+            //remove property.
+            var remProp = css.removeProperty('color');
+            console.log(remProp);
+
+        </script>
+</body>
+</html>

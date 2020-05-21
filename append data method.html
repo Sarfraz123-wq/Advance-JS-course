@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myh2"> Sarfraz Rasheed  </h2>
+    <script>
+        var parent = document.getElementById('myh2');
+       parent.firstChild.appendData('Kehar')
+       console.log(parent.firstChild);
+       console.log(parent.childNodes);
+       //1 child it is appended in previous child
+       // the appended txt not make his one child.
+        // and it is always added in last.
+    </script>
+</body>
+</html>

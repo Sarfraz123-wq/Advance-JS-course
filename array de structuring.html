@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = ['JavaScript','6 Months','GeekyShows'];
+        // var [coursName,duration,tutor] = a;
+        // console.log(tutor);//note a[tutor] undefined.
+        // //yahn poora index tuttor se replace hogaya he.
+
+        // var [coursName,duration] = a;is me third index a[2] hoga 
+
+        //  var [coursName,,tutor] = a;//is me 2nd index a[1] hoga 
+        // console.log(coursName);//js
+
+        //-------------------------------------------------------------
+        var a,b;
+        [a,b] = [10,20];
+        console.log(a);//10
+
+        //using defaultt value
+        var c,d;
+        [c=10,d] = [,20];
+        console.log(c);//10
+        //bydefault se value tab leta he jab usko koi value na di gai ho
+        // agar koi value di he too wo print krega default nahi.
+
+        var[x=5,y=10] = [90];
+        console.log(x);//90
+        console.log(y);//10
+        //-------------------------------------------------------------
+
+        //Array deStructuring to a funcion ya Array passsing to a function.
+        console.log("-----------------------");
+        var elements = [10,20,30];
+        function show([value1,value2,value3])
+        {
+            console.log(value1);
+            console.log(value2);
+            console.log(value3);
+        }
+        show(elements);
+         //ghour see dekhen mene show method me as an arg [] diya he
+        //matlab index numbers ya elements of any array and mene
+        //jab func call kiya he to usko array as an arg pas krdya he.
+        
+        console.log("-----------------------");
+        var element = [10,20,30,40,50,60,70,80];
+        function shows([value1,value2,...rest])
+        {
+            console.log(value1);
+            console.log(value2);
+            console.log(rest);//30,--80.
+        }
+        shows(element);
+       
+        
+        //old way
+        console.log("-----------------------");
+        var elements2 = [10,20,30];
+        function show2(num)
+        {
+            console.log(num[0]);
+            console.log(num[1]);
+            console.log(num[2]);
+        }
+        show(elements2);//same output
+        //---------------------------------------------------------------
+        //Array return from function
+        console.log("----------------------")
+        var arr = [10,20,30];
+        function something(z)
+        {
+            return z;
+        }
+       // var x = something(arr);//z paramter me poora array de diya he.
+        var[a,b,c] = something(arr);//isme kisi variable me assign krne
+        //k bajaye direct function ko call kiya he jab call kiya he
+        //return le raha he to use variable me assign kr sakte hain
+        //ye array he islye multiple varibles me ya destructuring krli he.
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        console.log("----------------------------------")
+        //Nested Array De Structuring
+
+        var elementsOfArray = ['javascript','6 Months','Geeky',['Sarfraz','Fahad']];
+        var[course,time,instructor,[stu1,stu2]] = elementsOfArray;
+        console.log(stu1);
+        console.log(stu2);
+        console.log(instructor);//ok...
+        
+
+
+    </script>   
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv"> <h1 id="myh1"> We are learning  </h1>
+     <!-- scenario ye he k ye h1 yahan se cut kr k 
+    section me paste karna he  -->
+
+    </div>
+
+    <div id="mydiv2"> 
+    <h1>Sarfraz Rasheed</h1>
+    <h1>Tahir Rasheed </h1>
+    <!-- mujhe yahan pe h2 append krna he using JS     -->
+    
+
+        </div>
+        <div id="mydiv3"> 
+        <!-- yahan pr mujhe text element or comment append karwane hain     -->
+        
+        
+        </div>
+      <section id="mysec">  </section>
+
+        <div id="sarfraz"> 
+          
+        </div>
+
+
+      <script>
+          // Creating New h2 Element.
+          let newElement = document.createElement('h2');
+          console.log(newElement);
+          // Creating New Text Node.
+          let newText = document.createTextNode("Text something using JS");
+          console.log(newText);
+          // Creating New Comment.
+          let newComment = document.createComment("This is a comment");
+          console.log(newComment);
+        //   // Document Fragment..
+        //   It is not a active part of document tree structure 
+        //   changes made to the fragment dont affect the document.   
+        // ye temp jagah hoti he jahan hm kuch elements 
+        // or text wagera rakh k yahan se directly move kr k document
+        // me push kar dete hain..
+        
+        // Creating an Empty document Fragment.
+        let dFragment = document.createDocumentFragment();
+        console.log(dFragment);    
+      
+        //Append or move existing element from one place
+        //to another.
+
+        let mysec = document.getElementById('mysec');
+        let myh1 = document.getElementById('myh1');
+        // formula..
+        // parent.appendChild(child)
+        mysec.appendChild(myh1);
+        console.log(mydiv);
+        // abhi div me h1 nahi he..
+        console.log(mysec);
+        //mysec me chala gaya.
+
+        // append new Element h2..
+
+        let newElementNode = document.createElement("h2");
+        //console.log(newElementNode);
+        var targetNode = document.getElementById('mydiv2');
+        targetNode.appendChild(newElementNode);
+        console.log(mydiv2);
+
+        //creating & appending in div in one line
+        var targetNode = document.getElementById('mydiv2');
+        targetNode.appendChild(document.createElement('h3'));
+
+
+        //How to append element, text & comment at specific position. 
+
+        var target = document.getElementById('mydiv3');
+        //creating an empty element.
+        var el = document.createElement('p');
+        //creating text.
+        var txt = document.createTextNode("Pakistan Zindabad");
+        //creating comment..
+        var cmnt = document.createComment("Pakistan Paindabad");
+
+        // ab text el me dalna he..
+        var elemText = el.appendChild(txt);
+        console.log(elemText);// isme text aagaya he..
+        // ab ye hamen div me dalna he id3 me.
+
+        target.appendChild(elemText);
+        console.log(mydiv3);//hogaya..
+        //ab comment b dalna he yahan
+        target.appendChild(cmnt);//hogaya..
+
+
+
+
+        /* append elements and texts via Document
+         fragment */
+
+        // Empty Document Fragment.
+        var df = document.createDocumentFragment();
+        var hElement = document.createElement('h1');
+        var pElement = document.createElement('p');
+        // Inserting text in nodes directly..
+        hElement.textContent = "Sarfraz Rasheed";
+        pElement.textContent = "Kehar Karachi.";
+        // console.log(hElement);
+        // console.log(pElement);works
+
+        // Now append text nodes in Fragment.
+
+        df.appendChild(hElement);
+        df.appendChild(pElement);
+        console.log(df);//good.
+        // Now cut this from fragment to id sarfraz.
+
+        var sarf = document.getElementById('sarfraz');
+        sarf.appendChild(df);
+        console.log(sarf);//good..
+
+
+      </script>
+
+
+</body>
+</html>

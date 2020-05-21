@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--ye method node ko copy karne k lye use hota he
+     data k sath sath attributes or values ko b copy
+     krta he matlab id or uske naam ko b 
+    
+    phr iska matlab jo hm copy krenge iski id change karenge 
+    q k id unique hoti he.
+    
+    -->
+    
+    <ul id="myul">
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+    <div id="mydiv">
+        <!-- //yahan duplicateNode ko append krnga -->
+
+    </div>
+    <script>
+        let target = document.getElementById('myul');
+        var duplicateNode = target.cloneNode(false);
+        console.log(duplicateNode);
+        //false likhne se srf ul cpy hwa he element k 
+        // children copy nahi hote hain.
+        var duplicateNode = target.cloneNode(true);
+        console.log(duplicateNode);
+        // all copies with ul.
+        
+        //Now this dupicateNode is not the part of any
+        // element even its not the part of body..
+        // hamen isko agar kahin pe use karna he to hm 
+        // isko append kardenge wahan pr for example me
+        // aik div bana raha hn body me wahan isko append 
+        // krdnga        
+
+        let div = document.getElementById('mydiv');
+        div.insertAdjacentElement('beforeend',duplicateNode);
+        
+        //div.append(duplicateNode);
+        // wow append method b work kr raha he..
+        // div.appendChild(duplicateNode);
+        // console.log(div);//same dono work kar rahe hain.
+        // div.insertBefore(duplicateNode,null);
+        // console.log(div);
+        // console.log(document.body);
+    // ye b work kar raha he
+    // hm buhat saare methods se append kar sakte hain.
+    //agar hm clone node method use karte hain to wo
+    // data k sath sath attributes or values ko b copy
+    // krta he matlab id or uske naam ko b 
+    
+    </script>
+
+
+
+
+
+
+</body>
+</html>

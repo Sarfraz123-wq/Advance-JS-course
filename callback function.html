@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- It can be any function.
+    jab hm function ko call karte waqt usme arg pas karte wqt jbb hm use
+    function pas karte hain to usey callback function kehte haiin   -->
+
+
+
+    <script>
+        function show()
+        {
+            document.write('Im show function'+"<br>");
+        }
+        function geeky(callback)
+        {
+            callback();
+        }
+        geeky(show);
+
+
+
+        //with argument.
+        function show2(a)
+        {
+            document.write('Im show2 function'+ " "+a +"<br>");
+        }
+        function geeky2(callback2)
+        {
+            var a = 10;
+            callback2(a);
+        }
+        geeky2(show2);
+
+
+
+
+
+
+        //another method.
+
+        function show3(b)
+        {
+            document.write('Im show2 function'+ " "+b);
+        }
+        function geeky3(b,callback3)
+        {
+            
+            callback3(b);
+        }
+        geeky3(20,show3);
+        
+
+        //function pehle banate nahi hain balke arg pass karte waqt banate
+        //hain anonyn or error b kar sakte hain...
+
+
+        
+        //another method.
+        document.write("<br>")
+        function geeky4(c,callback4)
+        {
+            
+            callback4(c);
+        }
+        geeky4(30,function(c)
+        {
+            document.write('Im show2 function'+ " "+c);
+        });
+
+        // function ko kat k parenthesis b katdo q k aik arg he or statemnt aik
+        //he phr arrow banado.
+
+        //Synchronous..
+        // ye wait karta he matlab line by line execute hota he.
+        document.write("<br>")
+        function yes()
+        {
+            document.write('Im yes function'+"<br>");
+        }
+        function sarfraz(no)
+        {
+            //no();
+            document.write("Wah wah");//same//jo isme hoga wo exec
+        }
+        sarfraz(yes);
+
+        document.write("END");
+
+
+        //Asynchorouns ye wait ni karta h
+
+        setTimeout(() => {
+            
+            console.log("im Async");
+        }, 5000);
+        console.log("END");
+        //end pehle exec then func.
+
+   
+        
+        
+   
+   
+     </script>
+</body>
+</html>

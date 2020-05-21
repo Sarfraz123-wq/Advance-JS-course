@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myh2"> Sarfraz Rasheed  </h2>
+    <script>
+        var access = document.getElementById('myh2');
+        let deletedData = access.firstChild.deletedData(0,5);
+        console.log(access.firstChild);
+        console.log(deletedData);// undefined
+        // ye deleted data return nahi karta he.
+       </script>
+</body>
+</html>

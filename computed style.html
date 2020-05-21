@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* internal CSS */
+        .myclass1
+        {
+            font-style: italic;
+            font-size: 70px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Computed Style can include inline stylesheet internal stylesheet
+    external stylesheet as well.  -->
+        <!-- Inline css -->
+        <h3 id="myh3" class="myclass1" style="color:yellowgreen;">
+        Heading 3</h3>
+            <p>Paragraph</p>
+        <script>
+            var yes = document.getElementById('myh3');
+            var allCssProp = window.getComputedStyle(yes);
+            // all css properties..
+            console.log(allCssProp);
+           // console.log(allCssProp[0]);
+           console.log(allCssProp.fontStyle);
+           // ye window.geComputedStyle method srf read only he
+           // isme changes nahi kr sakte error dega
+           //allCssProp.fontSize = "90px";
+           // error read only...
+
+           // hm style se read and write donno kar sakte hain.
+
+           var cs = yes.style;
+           cs.fontWeight = 'bold';//hogaya
+            
+            //lekin isme aik cheez he is sey hm 
+            // internal or external css ko access nahi kar sakte.
+            console.log(cs.fontSize);// empty de raha he.
+            // ye srf inline pe he access kar sakta he bs.
+
+
+            //isme aik or ajeeb cheez ye he k hm style metthod se
+            // access to nahi karpa rahe hn lekin changes kar saktte hn
+
+            cs.fontSize = '120px';
+            // hogaya lol.
+
+
+        </script>
+</body>
+</html>
