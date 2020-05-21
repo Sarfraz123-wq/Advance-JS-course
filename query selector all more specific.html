@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title class="geek"> Tree </title>
+    </head>
+<body>
+    <h1>We are learning JS.</h1>
+    <h1 class="geek myclass"> SUBSCRIBE GEEKY SHOWS</h1>
+    <h2> Now </h2>
+    
+    <p class="geek"> HELLO 
+    <span> GEEKYSHOWS </span>
+    <em> World </em>
+    <span> YouTube </span> 
+    </p>
+    <p class=myclass>
+        <span>Bye</span>
+        geeky shows</p>
+    <div id="show">
+        <p>1st p inside div </p>
+        <p class="geek">2nd p <span class="myspan">inside </span> <em> div </em> </p>
+        <span> pakistan</span>
+        <span> india</span>
+    <div>  Hello my name is Div </div>
+    <span class="myspan">sarfraz</span>
+    </div>
+    <p id="show1">I'm paragraph</p>
+    <p id="show2">I'm 2nd paragraph</p>
+    <script>
+    
+    //In one line..
+        
+    /*
+    Element Selector
+    querySelectorAll("p");
+    querySelectorAll("p,div,h1");    
+    
+    Class Selector
+    querySelectorAll(".geek");
+    querySelectorAll("p.myclass");.. paragraph me myclass he..   querySelectorAll(p>span.myclass)..para me span he usme myclass class he usko display krdo. 
+    
+    Attribute Selector
+    querySelectorAll("div[id]");..aisa div jo id rakhta ho
+    querySelectorAll("div[id='geek']");    
+    */
+        
+    //myspan ko access karna he...
+        
+    var result = document.getElementById('show').querySelectorAll('span.myspan');
+    document.write(result+"<br>");
+    console.log(result);//works..
+        
+    var result2 = document.getElementById('show').getElementsByClassName('myspan');
+    document.write(result2+"<br>");
+    console.log(result2);//works..
+
+    //show me jitne span hain sab display krdo        
+    var result3 = document.getElementById('show').getElementsByTagName('span');
+    document.write(result3+"<br>");
+    console.log(result3);//works..
+    
+    //more short and easy..
+        
+    var result4 = document.querySelectorAll('#r>.geek>span.myspan')    
+    document.write(result4+"<br>");
+    console.log(result4);//works..    
+    //querySelector b use kar sakte hain agar single output print 
+    // krna ho to 
+    </script>
+    </body>
+</html>
+    
