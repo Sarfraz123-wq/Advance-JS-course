@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myh2"> Sarfraz Rasheed Kehar </h2>
+    <script>
+        var access = document.getElementById('myh2');
+         console.log(access.length);
+        // undefined q k hm DOM parh rahe hain hamen har
+        // Element ko as a node use karna he tree ki tarah 
+        // sochna he iska first child text he islye length
+        // nahi bata raha access.length matlab <h2 id="myh2"> 
+        // ye poora iska matlab he. hmen srf text chahye to
+        // dekhenge text kis child per he phr usko access karna he
+        console.log(access.firstChild.length);
+
+    </script>
+</body>
+</html>

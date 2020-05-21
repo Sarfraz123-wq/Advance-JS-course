@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Properties
+    ------------
+    caption
+    tHead
+    tFoot
+    rows
+    tBodies
+
+    Methods
+    ------------
+    createCaption()
+    deleteCaption()
+    createTHead()
+    deleteTHead()
+    createTFoot()
+    deleteTFoot()
+  -->
+
+    <table border="1" id="mytab">
+        <caption>My table caption </caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>11</th>
+                <th>Rahul</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <th>22</th>
+                <th>Sonam</th>
+                <th>PhP</th>
+            </tr>
+        </tbody>
+        
+        <tbody>
+            <tr>
+                <th>11</th>
+                <th>Rahul</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <th>22</th>
+                <th>Sonam</th>
+                <th>PhP</th>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th>55</th>
+                <th>Rohan</th>
+                <th>React</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        var table = document.getElementById('mytab');
+        var tcap = table.caption;
+        console.log(tcap);
+        //console.log(tcap.innerHTML + " ");
+        
+        //Changing Caption
+    
+        var tcap = table.caption;
+        tcap.innerHTML = "New Caption";
+        console.log(tcap.innerHTML);//hogaya change.
+
+        // Same for all methods tHead, tBody, tFoot.
+        // they all display their respective part.
+
+        var thed = table.tHead;
+        // console.log(thed);
+        // console.log(thed.innerHTML);
+        thed = table.tHead;
+        thed.innerHTML = "<tr> <th> S/No </th> <th> Student </th> <th> Course</th></tr>";
+        console.log(thed);//hogaya change.
+        //same for tFoot.
+
+        //agar hmari table me do tbody hain to hm 
+        // unko index no se b access kar sakte hain.
+
+        var tbdy = table.tBodies;
+        console.log(tbdy);//both
+        console.log(tbdy[0]);
+        console.log(tbdy[1]);
+
+
+
+
+    </script>
+
+</body>
+</html>

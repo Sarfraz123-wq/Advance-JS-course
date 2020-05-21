@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myh2"> Sarfraz Rasheed Kehar </h2>
+    <script>
+        var access = document.getElementById('myh2');
+        console.log(access.firstChild.data);
+    //    again yehan b hamen access k firstChild ko use 
+    //    karna he.. 
+        // we can set value as well.
+        access.firstChild.data = "Tahir rasheed";
+        console.log(access.firstChild);//hogaya
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Window Open</h1>
+    
+    <button type="button" id="btn">Create New Window</button>
+    <button type="button" id="bandkro">Band kro</button>
+   <script>
+    //window.open("http://google.com","_self");
+    // var wndow = window.open('','_blank','height=200,width=200');
+    // wndow.document.write('me new window hn');
+    // Using Event... 
+    var gs = window.open('http://geekyshows.com','_blank','height=400,width=400',
+    scrollbars='no');
+    
+    //ye chrome me ab b scrollbar de raha he lekn doosre \
+    // browsers me nahi dega.
+    function createWindow()
+    {
+        window.open("http://google.com");
+    }
+    document.getElementById('btn').addEventListener('click',
+    createWindow);
+
+    // close method.
+    function Exit()
+    {
+        gs.close();
+        //close k lye window ki jagah jisko close krna
+        //he uska nam likhenge.
+    }
+    document.getElementById('bandkro').addEventListener('click',Exit);
+
+    </script>
+</body>
+</html>

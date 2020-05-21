@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- alert()
+        stop everything and check this msg.
+    confirm()
+    ok btn for agree and cancel for disagree.
+    ok for true and cancel for false.
+    ye if else condition k lyee best he agar user ok
+    karta he to furthur kro wrna chordo.
+    prompt()
+        It uses for input mostly if user doesn't give 
+        input then null will be stored. 
+    -->
+    <script>
+        window.alert("hello world");
+        let a =5;
+        let b = 10;
+        alert(a+b);
+        alert(a+5);
+
+        // confirm('are you sure?'); simple
+        // var msg = confirm('are you sure?');
+        // document.write(msg);// if ok then true.
+
+        var msg = confirm('are you sure?');
+        if(msg==true)
+        {
+            document.write('msg is deleted');
+        }
+        else
+        {
+            document.write('action cancelled');
+        }
+
+        var name = prompt('your name please?','Tahir');
+        //Tahir is for default.
+        document.write(name);
+
+    </script>
+</body>
+</html>

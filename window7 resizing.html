@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Horizontal....> positive no moving right.
+                    negaive no moving left.   
+                    
+    Vertical....> positive no moving down.
+                    negaive no moving up.    
+ -->
+    <button type="btn" id="openbtn">Open Button</button>
+    <button type="btn" id="resizebtn">Resize Button</button>
+
+    <script>
+        var newWindow;
+        function openWindow()
+        {
+            newWindow = window.open('','_blank','height=400 width=400')
+            newWindow.document.write('me new window hn');
+        }
+        function resizeWindow()
+        {
+            newWindow.resizeBy(200,200);
+            // resizeBy basically ye current position se bar bar 
+            // x y distance barhata he.
+
+            //resizeTo()
+            //resize the window to the specified coordinates.
+            // ye aik bar resize hoga bs.
+        }
+        document.getElementById('openbtn').addEventListener('click',openWindow);
+        document.getElementById('resizebtn').addEventListener('click',resizeWindow);
+
+
+    </script>
+</body>
+</html>
