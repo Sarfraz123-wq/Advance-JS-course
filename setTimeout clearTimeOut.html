@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatu
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum.
+    </p>
+    <button type="button" id="btn">Clear Timeout</button>
+
+    <script>
+        // function changeCSS()
+        // {
+        //     document.getElementById('myp').style.color = 'red';
+        // }
+        // setTimeout(changeCSS,3000);// in ms.
+        // //agar function koi parameter rakhta he to use time k bad comma
+        // deke de sakte hain optional he ye.
+
+        // direct method 
+        // setTimeout(function changeCSS()
+        // {
+        //     document.getElementById('myp').style.color = 'red';
+        // },3000);
+        // direct function likhdo.
+        //anonym fnction b bana sakte hain baghair nam k.
+        //max yehi use krte hn sab.
+
+        //vscode bydefault..
+
+        var timeOutId = setTimeout(() => {
+            document.getElementById('myp').style.color='blue';
+            
+        }, 2000);      //good so simple.    
+
+        function clrTimeOut()
+        {
+            clearTimeout(timeOutId);
+        }     
+        document.getElementById('btn').addEventListener('click',clrTimeOut);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myid">
+        
+        We are learning JS.
+    <!-- This is comment -->
+    </h1>
+    <p id="myid1">I am paragraph. </p>    
+    
+
+<script>
+
+
+document.write("-------------Document <br> <br>")
+document.write(document.nodeName + "<br>");
+document.write(document.nodeValue + "<br>");
+document.write(document.nodeType + "<br>");
+console.log(document.nodeName);
+console.log(document.nodeValue);
+console.log(document.nodeType);
+
+document.write("<br><br>-------------Element <br> <br>");
+
+var elem = document.getElementById("myid");
+document.write(elem.nodeName + "<br>");
+document.write(elem.nodeValue + "<br>");
+document.write(elem.nodeType + "<br>");
+console.log(elem.nodeName);
+console.log(elem.nodeValue);
+console.log(elem.nodeType);
+
+document.write("<br><br>-------------Text <br> <br>");
+
+var txt = document.getElementById("myid");
+document.write(txt.firstChild.nodeName + "<br>");
+document.write(txt.firstChild.nodeValue + "<br>");
+document.write(txt.firstChild.nodeType + "<br>");
+console.log(txt.firstChild.nodeName);
+console.log(txt.firstChild.nodeValue);
+console.log(txt.firstChild.nodeType);
+
+document.write("<br><br>-------------Comment <br> <br>");
+
+var txt = document.getElementById("myid");
+document.write(txt.firstChild.nextSibling.nodeName + "<br>");
+document.write(txt.firstChild.nextSibling.nodeValue + "<br>");
+document.write(txt.firstChild.nextSibling.nodeType + "<br>");
+
+console.log(txt.firstChild.nextSibling.nodeName);
+console.log(txt.firstChild.nextSibling.nodeValue);
+ console.log(txt.firstChild.nextSibling.nodeType);
+
+// Change the content through Js.
+var newText = document.getElementById("myid").firstChild.nodeValue = "The content is changed yahooo.";
+document.write(newText);
+
+</script> 
+</body>
+</html>

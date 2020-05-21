@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--   setInterval method.
+          repeatedly calls a function 
+     -->
+     <div id="mydiv">
+
+     </div>
+            <button type="button" id="btn">Stop Loop</button>
+     <script>
+        //  function text()
+        //  {
+            
+        //     document.getElementById('mydiv').textContent += 'Hello';
+        //     //don't forget to write + before =.
+        //  }
+        //  setInterval(text,2000);
+         // hm text ki jagah function bana k b likh sakte hai jese
+         // timer wale me kiya he.
+         setInterval(() => {
+           var intervalId =  document.getElementById('mydiv').textContent += 'Hello';
+         }, 2000);//good
+
+         function clearLoop()
+         {
+             clearInterval(intervalId);
+         }
+         document.getElementById('btn').addEventListener('click',clearLoop);
+
+     </script>
+
+
+</body>
+</html>

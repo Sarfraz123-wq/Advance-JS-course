@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myp" class="myclass">Paragraph</p>
+
+    <script>
+
+
+        var p = document.getElementById('myp');
+        p.setAttribute('class','myFirstClass');
+        var getAt = p.getAttribute('class');
+        console.log(getAt);
+        console.log(p)
+        /* Ye methods recommended nahi hain hm simply is tarah
+        b kar sakte hain */
+        p.class = "sarfraz";
+        console.log(p.class);
+        console.log(p.attributes);
+        //-------------------------------------------------------------
+        p.removeAttribute('id');
+        console.log(p);//  id removed
+       var att =  p.hasAttribute('title');
+        console.log(att);
+        
+    </script>
+
+</body>
+</html>

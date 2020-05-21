@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            var arr = [10,20,30,40,50];
+            var newArray = arr.map(function(value,i,ar)
+            {   
+                value++;
+           // console.log(i+" = "+value);
+            // newArray k lye return me likhte hain tabhi sahih output deta he
+            // array k form me output dega.
+            return value;
+            //third parameter ar returns whole array.
+            //only value is req rest both our optional.
+            //we can give names any. 
+
+            });
+            console.log(arr);
+            //same map method original array pe koi changes nahi krta.
+            console.log(newArray);
+
+
+            //---------------------------------------------------------
+            //Array of objects..
+
+            var a =[
+                {price: "100",
+                product:"Mobile"},
+
+                {price: "200",
+                product:"Laptop"},
+
+                {price: "300",
+                product:"Tablet"},
+
+                {price: "400",
+                product:"PC"},
+
+            ];
+            yesArray = a.map(function(value)
+            {
+                console.log(value);
+                //console.log(value.price);
+                return value;
+            })
+            console.log(yesArray);
+            //in the form of array. we can use yesArray by getting return.
+
+            //We can also use arrow function..
+            var noArray = a.map(value => value);
+           console.log(noArray);
+           //arrow function me agar single para he to parameter
+           // k sath () lagane ki zaroorat nahi he agar single return
+           // he to return likhne ki zaroorat nahhi he.or single line
+           //code he to {} b likhne ki zaroorat nahi he.
+        </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Normalize method removes empty Text nodes, and joins 
+    adjacent/children nodes so there will be no adjacent text
+    nodes. means it merges child nodes. -->
+    <div id="myid">
+        <h1>We are learning JS</h1>
+        <h1>I am h1 </h1>
+    </div>
+    
+    <script>
+    var target = document.getElementById('myid');
+    // Create and append new text.
+    target.appendChild(document.createTextNode("First text using JS "));
+    // Create and append new text.
+    target.appendChild(document.createTextNode("Second text using JS "));    
+    // Create and append new text.
+    target.appendChild(document.createTextNode("Third text using JS "));    
+    console.log(myid);
+    // First text
+    // Second text
+    // Third text 
+    target.normalize();
+    // Now merges..
+    // First text Second text Third text
+    
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myul">
+        <li> Item1 </li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>   
+
+    </ul>
+
+    <script>
+       let element = document.getElementById('myul');
+       //element.innerHTML = "";//inner part nothing 
+       // but ul is.
+        // agar hm outerHTML use karte hain to inner k
+        // sath sath outer b change hota he
+        // or agar hm srf outerHTML ko display kren to
+        // outer inner dono display hote hain..
+        // q k outer inner k sath linked hai.
+        element.outerHTML = "<p> Sarfraz Rashed </p>";
+        // ab body me ul li nahi he balke paragraph he..
+    
+    </script>
+</body>
+</html>

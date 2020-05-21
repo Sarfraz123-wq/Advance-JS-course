@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myul">
+        <li>Item 1</li>
+        <li id="two">Item 2</li>
+        <li id="three">Item 3</li>
+        <li>Item 4</li>
+        <!-- ab scenario ye he id three ko replace krna he
+        span se. -->
+
+    </ul>
+    <span id="myspan"> This is a span  </span>
+
+    <script>
+        var parent = document.getElementById('myul');
+        var oldItem = document.getElementById('two');
+        var newItem = document.createElement('li');
+        newItem.textContent = 'Number 2';
+        var replacedItem = parent.replaceChild(newItem,oldItem);//replaced
+        // q k ye replace item ko return kr raha he is lye
+        // hm ise variable me asign kr sakte hain.
+        console.log(parent);//replaced
+        console.log(replacedItem);
+
+        // id three replace with span..
+        var three = document.getElementById('three')
+        var span = document.getElementById('myspan');
+        parent.replaceChild(span,three);//hogaya.
+        //ab is sey kya hwa Item three ko replace krdya This is a span and 
+        //This is a span apni jagah se cut gaya. q k wo wahan chala gya.
+    </script>
+</body>
+</html>

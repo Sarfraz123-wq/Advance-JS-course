@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myid" class="myclass"> We are learning JS 
+        <!-- This is comment -->
+    </h1> 
+    <p id="myid1">I am paragraph </p>
+    <script>
+        // Attribute properties - name , value 
+        var result = document.getElementById("myid");
+        document.write(result.attributes[0].nodeName+" = ");
+        document.write(result.attributes[0].nodeValue+"<br>");
+        
+        document.write(result.attributes[1].nodeName+" = ");
+        document.write(result.attributes[1].nodeValue+"<br>");
+        // Length
+        document.write(result.attributes.length+"<br>");
+        //using loop
+        for(let i=0; i<result.attributes.length;i++)
+        {
+            document.write(result.attributes[i].nodeName + " = ");
+            document.write(result.attributes[i].nodeValue+"<br>");
+        }
+
+        // nodeName and nodeValue keywords are changed in name & value.
+
+        var result = document.getElementById("myid");
+        document.write(result.attributes[0].name+" = ");
+        document.write(result.attributes[0].value+"<br>");
+        
+        document.write(result.attributes[1].name+" = ");
+        document.write(result.attributes[1].value+"<br>");
+        // Length
+        document.write(result.attributes.length+"<br>");
+        //using loop
+        for(let i=0; i<result.attributes.length;i++)
+        {
+            document.write(result.attributes[i].name + " = ");
+            document.write(result.attributes[i].value+"<br>");
+        }
+
+    </script>
+</body>
+</html>

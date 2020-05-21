@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    -->
+    
+    <ul id="myul">
+        <li>Item1</li>
+        <li id="two">Item2</li>
+        <li>Item3</li>
+    </ul>
+    
+    <ul id="something">
+        <li>php</li>
+        <li id="2">java</li>
+        <li>python</li>
+    </ul>
+    
+    
+    <script>
+        let parentNode = document.getElementById('myul');
+        let remItem = document.getElementById('two');
+        var delItem = parentNode.removeChild(remItem);
+        console.log(delItem);
+        console.log(parentNode);//hogaya delete.
+        // //ab ye method remove items ko return karta he
+        // to hm isko variable me assign kar k dobara b use
+        // kar sakte hain.
+
+        //ab agar parent ki id nahi ho to kese karenge?
+
+        let remItem2 = document.getElementById('2');
+        remItem2.parentNode.removeChild(remItem2);
+        console.log(remItem2);
+       // hogaya java delete...
+
+    //    ab agar delte item ki id na pata ho to?
+    
+    // parent.firstchild ya parent.firstchild.sibling
+    // wagera kr k delete krdenge 
+    
+    
+    </script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Session Storage</h1>
+
+    <!-- 
+        It is read only property window object. It stores data in a web
+        browser specifically to the domain and protocol for a particular
+        session. It doesn't get sent to the server. The data in the session
+        storage gets cleared when page session ends. A page session last as
+        long as browser is open and servives over page reloads and restores.
+
+     -->
+     <script>
+         //for google chrome.
+         // dev tool..>applications..>sessions storage.
+         // also we can console.log
+            //Method1 setItem
+            window.sessionStorage.setItem('email','keharsarfraz');
+            // ab me browser band krta hn to session expire hojata he
+            // agar me comment krta hn tb bhi data expire.
+            console.log(sessionStorage.length);//1
+
+            //Method2 getItem
+            console.log(sessionStorage.getItem('email'));
+
+            //Method3 key.
+            console.log(sessionStorage.key(0));
+
+            //Method4. clear
+            sessionStorage.clear();
+     </script>
+
+
+</body>
+</html>

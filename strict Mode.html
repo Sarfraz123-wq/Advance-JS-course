@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Strict Mode se hm code ko zyada sakht kardete hain
+    for ex..
+    a = 10
+    console.log(a)//10.
+    "use strict";
+    a = 10
+    console.log(a)//a is not defined.
+    //matlab 
+    var a = 10
+    console.log(a)//10.
+    // ye hm tabhi use karte hain kisi function me k usme koi aisa
+    // variable na ho jo declare hone se pehle initialize ho raha ho.
+    //ye stict phr srf within function kam karega poore code me nahi.
+    //agar ttop pe likhte hain to saab k lye.
+    -->
+
+
+    <script>
+        "use strict";
+        function calc(a,b,b)
+        {
+            return a+b+b;
+
+        }
+        console.log(calc(10,30,50));
+        //90 ana chahye lekn ye 110 dega ye last b ki value donno k lye
+        //consider krega jo k ghalat he. error b nahi de rha lekn outpt 
+        //wrong he
+        //agar me use strict use krta hn to error batata he.
+    </script>
+</body>
+</html>
