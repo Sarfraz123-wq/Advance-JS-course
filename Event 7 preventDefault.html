@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event Methods</h1>
+    <div id="mydiv" style="width:200px; height: 200px; background-color:burlywood;" >
+    <a href="http://google.com.pk" id="mylink">
+    Click and open google</a>    </div>
+    <!--is sey simply link create hwa he jis se google open
+    hogi. -->
+
+    <!-- ab me chahta hn k link open na ho to me preventDefault
+    method use krnga. -->
+
+    <script>
+        function stopLink(e)
+        {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+        function div1(e)
+        {
+            this.style.backgroundColor = 'orange';
+        }
+        // ab access kar k use krta hn method ko.
+        var lnk = document.getElementById('mylink');
+        lnk.addEventListener('click',stopLink,false);
+        // basically isme mene kya kiya he lnk variable
+        // se mene mylink tak access kiya he or isko link
+        // krdya he stopLink method k sath k ye kro bs.
+        // ab google nahi open ho rahi..
+
+        // stopPropagation() or preventDefault() same nahi he
+        // stopPropagation() apne parent me wo activiy 
+        // krne ko rokta he jab k ye action he perform nahi karta
+        // magar propagation karta he agar koi events lagayen hain to.
+
+        var dv = document.getElementById('mydiv');
+        // qk poore div pe apply krna he na color to div ka change hoga na
+        dv.addEventListener('click',div1,false);
+        //dekho color change ho raha he.
+        // agar me e.preventDefault k sath e.stopPropagation b use krta hn
+        // to preventDefault link ko stop krega or stopPropagation orange 
+        // nahi hone dega. 
+    </script>
+
+
+</body>
+</html>

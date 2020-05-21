@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Theory
+    focus..> when elements gains focus...> no bubble.
+    blur..> when elements loses focus..> no bubble.
+    focusin..> when elements is about to gain focus.
+    focuout..> when elements is about to loses focus
+    and just before the blur event.
+    -->
+    <h1>Focus Events</h1>
+    Name <input type="text" id="mytext">
+    <script>
+        var txt = document.getElementById('mytext');
+        function focusIn(e)
+        {
+            txt.style.backgroundColor = "orange";
+        }function focusOut(e)
+        {
+            txt.style.backgroundColor = "white";
+        }
+        txt.addEventListener('focus',focusIn);
+        // focus matlab jb click krnge.
+         txt.addEventListener('blur',focusOut);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Remove Event Listener </h1>
+    <button id="mybtn">Click Here</button>
+
+    <script>
+        function disp1(){
+            alert('Button1 clicked');
+        }        
+        
+        function disp2(){
+            alert('Button2 clicked');
+        }     
+        var btn = document.getElementById('mybtn');
+        btn.addEventListener('click',disp2,'false');
+        btn.addEventListener('click',disp1,'false');
+        //works pehle pehla handler chalega phr dosra.
+        btn.removeEventListener('click',disp1,'false');
+        //hogaya ye false '' inme likhna he...      
+    </script>
+</body>
+</html>

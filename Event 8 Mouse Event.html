@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Theory
+        1- mousedown
+        It fires when mouse btn is pressed down
+        2- mouseup
+        It fires when mouse btn is released
+        3- click. (click).--- mousedown+mouseup
+        4- dblclick.--- mousedown+mouseup+click+mousedown
+        +mouseup+click+dblclick 
+        5- mouseenter-- Mouse hover butt no bubling
+        6- mouseleave-- mouse hover exit-- no bubling
+        7- mouseover- mouse hover but with bubbling
+        8- mouseout- mouse hover exit but with bubbling
+        9- mousemove-When mouse moves or cursor moves
+        10- contextmenu- When mouse right btn is clicked. 
+        -->
+        <h1>Mouse Event</h1>
+        <div id="one" style="width: 100px; height: 100px; 
+        background-color: red;">
+        <div id="two" style="width: 60px; height: 60px;
+        background-color:black;">
+        </div>    
+    </div> <br><br>
+    Name <input type="text" id="mytext">
+
+    <script>
+        function div1(e){
+            console.log(e.type);
+        }
+        function div2(e){
+            console.log(e.type);
+        }
+        var divOne = document.getElementById('one');
+        var divTwo = document.getElementById('two');
+        // divTwo.addEventListener('mousedown',div1,false);
+        // // isme ye kiya he k event he jab black div pe mouse click krte
+        // // waqt jab mouse ka btn down hota he to event perform hojata he.
+        // divTwo.addEventListener('mouseup',div1,false);
+        // //releasing pe hoga matlab up.
+        // divTwo.addEventListener('click',div1,false);
+        // //teno aik sath hojayenge.down+up+click
+        // divTwo.addEventListener('dblclick',div1,false);
+        // //hogaya.
+        // divTwo.addEventListener('mouseenter',div1,false);
+        // hover pe ho raha he lekin parent ka nahi ho raha matlab
+        // aik main div k andar aik child div he black agar me child pe
+        // hover krnga to iska matlab lazmi he k parent pe b hover hona
+        // chahye q k child black div parent k ooper he to niche wale
+        // pe b hover hona chahye lekin ye bubbling nahi karta matlab 
+        // parent ko consider nahi karta he jispe hover kroge whi hoga.
+        // divTwo.addEventListener('mouseleave',div1,false);
+        // ye hover chorne pe ye b bubbling nahi karta.
+        // divTwo.addEventListener('mouseover',div1,false);
+        // //mouse hover with bubbling
+        // divTwo.addEventListener('mouseleave',div1,false);
+        // //mouse hover exit with bubbling
+        // divTwo.addEventListener('mousemove',div1,false);
+        // //when we move cursor event performs.
+        // divTwo.addEventListener('contextmenu',div1,false);
+        // //right click pe.down+up+contextmenu
+        //left click pe.down+up+click
+
+        //Bubbling ko samajhte hain ab sahih se.
+
+        divOne.addEventListener('click',div1,false);
+        divTwo.addEventListener('click',div2,false);
+        // agar me black pe click karta hn q k ye child hai main
+        // ka islye main pe b click ho raha he 2 click output hain.
+        // ye bubbling he bubbling me reverse me chalta he.
+        
+        // some practical work.
+        var txt = document.getElementById('mytext');
+        function changeColorOrange(e) {
+        
+            txt.style.backgroundColor="orange";
+        }
+        function changeColorWhite(e) {
+            
+            txt.style.backgroundColor="white";    
+        }
+        txt.addEventListener('mouseenter',changeColorOrange,false);
+        txt.addEventListener('mouseleave',changeColorWhite,false);
+
+    </script>
+</body>
+</html>

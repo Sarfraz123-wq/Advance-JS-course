@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <h1>key Events</h1>
+    Name <input type="text" id="mytext">
+
+    <script>
+        var txt = document.getElementById('mytext');
+        function keyEvent(e)
+        {
+            console.log(e.type + ' '+ e.keyCode + ' '+ 
+            String.fromCharCode(e.keyCode));
+        }
+        txt.addEventListener('keydown',keyEvent,false);
+        txt.addEventListener('keypress',keyEvent,false);
+        txt.addEventListener('keyup',keyEvent,false);
+
+
+        // agr is tarah ka koi kam karna he to keypress
+        // use karen wo sahih output deta he.
+        // baqi unme capital or small me farq nahi karta
+    </script>
+</body>
+ </html>

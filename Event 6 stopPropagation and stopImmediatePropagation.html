@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #one
+    {
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+    }
+    #two
+    {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+    }
+    #three
+    {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <h1>Event Methods </h1>
+    <div id="one">1
+        <div id="two">2
+            <div id="three">3
+
+            </div>
+        </div> 
+    </div>
+    <script>
+        function div1 (e) {
+            this.style.backgroundColor = 'red';
+        }
+        function div2 (e) {
+            this.style.backgroundColor = 'blue';
+            e.stopImmediatePropagation();
+        }
+        function div2_2 (e) {
+            this.style.width = '250px';
+        }
+        function div3 (e) {
+            this.style.backgroundColor = 'green';
+            e.stopPropagation();
+        }
+        // e likhne ka yehi faida he k hm isko use kar
+        // sakte hn e k baghair stop method kam nahi krega.
+        // hm kese lagayenge? agar e nahi hoga to
+
+        //agar me div2 me stopPropagation mthod use krta hn
+        // to uske jitne b handlers matlab childs hain jese yahan
+        // width wala he k width b increase kro wo b run hoga
+        // islye hm stopImmediatePropagation method use krte hn
+        // ye method udhar he stop krdeta he
+
+        //access.
+        var divOne = document.getElementById('one');
+        var divTwo = document.getElementById('two');
+        var divThree = document.getElementById('three');
+
+        divOne.addEventListener('click',div1,false);
+        divTwo.addEventListener('click',div2,false);
+        divTwo.addEventListener('click',div2_2,false);
+        divThree.addEventListener('click',div3,false);
+        //ye mene false likha he matlab bubbling he to
+        // reverse me kam karta he btm to top 3 click to
+        // 3 2 1.
+
+        // lekin me chahta hn k agar 3 pe click krn to
+        // srf 3 pe kam kare 2 1 pe na jaaye to me 3 div
+        // me stopPropagation method lagaonga.
+
+        
+    </script> 
+</body>
+</html>

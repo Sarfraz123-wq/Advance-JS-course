@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Event Listener </h1>
+    <button id="mybtn">Click Here</button>
+
+    <script>
+        // var btn = document.getElementById('mybtn');
+        // btn.addEventListener('click',function(){
+        //     alert('Button is clicked');
+        // },false);
+        
+        // function myFuction()
+        // {
+        //     alert('Now Button is clicked');
+        // }
+        // var btn = document.getElementById('mybtn');
+        // btn.addEventListener('click',myFuction,false)
+        //--------------------------------------------
+        function disp1(){
+            alert('Button1 clicked');
+        }        
+        
+        function disp2(){
+            alert('Button2 clicked');
+        }     
+        // document.getElementById('mybtn').onclick = disp1;
+        // document.getElementById('mybtn').onclick = disp2;
+        // //is sey overwrite ho raha tha.
+
+        // is sey bachne k lye hm addEventListener() use
+        // karte hain ye multiple handlers ko support 
+        // karta he.
+        var btn = document.getElementById('mybtn');
+        btn.addEventListener('click',disp2,false);
+        btn.addEventListener('click',disp1,false);
+        //works pehle pehla handler chalega phr dosra.
+
+    </script>
+</body>
+</html>

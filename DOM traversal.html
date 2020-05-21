@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" id="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="myid">
+        <!-- parent node and parent element -->
+        <!-- parent element returns null if there is no parent -->
+    <h1>We are Learning JS</h1>
+    <p id="myid1">I am paragraph </p>
+    <p id="myid2"><span>I am span </span> I am paragraph  
+    
+    </p>
+    
+    
+    <script>
+    document.write("---------------------------<br>")
+    var result = document.getElementById('myid1')
+    document.write(result.parentElement);
+    console.log(result.parentElement);
+
+    var result2 = document.getElementById('first');
+    console.log(result2.parentNode);
+    console.log(result2.parentElement);//null bz document is not an element or we cant see it.
+    //or document is not a part of web page we can say..
+
+    //childNodes & children
+    // In me dif ye he k childNodes tamam childs print krta he indexex k lihaz se chahe wo inter
+    // space hon white space ya tab space se hon commment ho text ho wagera
+    // lekin children ye include nahi karta he.
+    //we can use here length property and loop as well. bz it is a collection.
+
+     
+    var a = document.getElementById('myid2');
+    console.log(a.childNodes);  //2 text and span
+    console.log(a.children)//1 span
+
+    //length
+    document.write("<br>");
+    document.write(a.childNodes.length+"<br>");
+    document.write(a.children.length);
+    
+    //loop
+    let lenOfChildNodes = a.childNodes.length;
+    let lenOfChildren = a.children.length;
+
+    // childnodes..
+    for(let i=0; i<lenOfChildNodes;i++)
+    {
+        document.write(a.childNodes[i].textContent + "<br>");
+        console.log(a.childNodes[i]);
+    }
+       
+// children..
+    for(let i=0; i<lenOfChildren;i++)
+    {
+        document.write(a.children[i].textContent + "<br>");
+        console.log(a.children[i])
+     }
+    // //iska faida kya he srf console per print karna nahi iski wajah se hm text ko dekh sakte 
+    // through js using textContent or hm iski values b change kar sakte hain 
+    //  for example
+    a.children[0].textContent = "Sarfraz Rasheed";
+    // iam span ki jagah Sarfraz Rasheed update hogaya.
+    // .textContent likhna zaroori he.
+
+    // // firstChild and firstElementChild
+    //  firstChild childNodes ki tarah he matlab white spaces wagera sab count karta he jabke
+    //  firstElementChild children ki tarah he.
+     
+
+    let b = document.getElementById('myid');
+    console.log(b.firstChild);//space bz of enter space
+    console.log(b.firstElementChild);//h1
+     // firstChild == childNodes[0]
+     b.firstChild.textContent = "Hello world";
+     
+     // lastChild and lastElementChild ..... 
+     // same 
+    
+    // previous sibling and previous element sibling.
+
+     console.log(a.lastChild.previousSibling);//sarfraz rasheed bz of updted
+     console.log(a.lastElementChild.previousElementSibling)//null
+
+     // next topic is nextSibling 
+     //same
+
+
+
+
+</script>
+
+</body>
+</html>

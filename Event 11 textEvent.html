@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Text Events</h1>
+   Name <input type="text" id="mytext">
+
+   <script>
+       var txt = document.getElementById('mytext');
+       function textEvent(e)
+       {
+           console.log(e.type + ' '+ e.data);
+       }
+       txt.addEventListener('textInput',textEvent,false);
+       //agar me koi aisi key press karta hn jo printing
+       //leter nahi hain to o nahi dikhayega.
+       // ex control alt backspace etc.
+   </script>
+</body>
+</html>

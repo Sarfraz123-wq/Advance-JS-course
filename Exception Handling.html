@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Exception is unexpected output
+    JS me exception ko eror mana gaya he.
+    doosri lang me exception or errors alag alag hain.
+    -->
+    <script>
+        try{
+            // ye cause of error he matlab agar koi error he to yahan 
+            //likhenge wo. or agar error hoga to uske niche walaa code
+            // execute nahi hoga try me.
+
+            //for example..
+            //undefined method calls here.
+            add();
+            document.write('Skipped code'); 
+            //ye code hamara kabi execute nahi hoga agr error hwa to.
+            //srf usi code ko rakhte hain jisme doubt ho warna application 
+            //unexpected output degi q k pata ni kitne lines of code execute na ho.
+        }
+        //seedha abhi control pas hoga catch me.
+        //ye error ki info provide karta he.
+        catch(e)
+        {
+            //ye tabhi chalga jab try me error hoga warna nahi.
+            //bydefault information pehle check krte hain.
+            //messge property he usko dekho pehle.
+            document.write("Message: "+e.message+"<br>");//add is not defined.
+            document.write("Name: "+e.name+"<br>");//Ref error.
+            document.write("Stack: "+e.stack+"<br>");//Add is not defined in linee no etc.
+            //abhi hmne handle krne ka koi code nahi likha he hm srf
+            // error ki info le rahe hain.
+
+            //Mera msg...
+            document.write("Ye Function defined nahi he.");
+            //agar hm try catch nahi likhte hain to 404 error deta he jo readale 
+            //nahi hota.
+        }
+        finally{
+            // isme wo code rakhte hain jo har soorat me code chalna chahye chahe
+            // exception ho ya na ho ye chalega.
+            document.write('me to chaloonga..')
+        }
+
+        //throw ye zyadatar conditions me use hota he agar true he to statement throw
+        //krdo browser k pas matlab print krdo.
+        function area(w,h)
+        {
+            if(isNaN(w) || isNaN(h))
+            {
+                throw "Parameter is not a number!!!";
+            }
+        }
+
+        //area(10,'B');
+        //agar me simple aise function ko call karta hn to error console me bata
+        //raha he isko docment me print krne k lye try catch ka use kiya he bs.
+        try{
+        area(10,'B');
+        }
+        catch(e)
+        {
+            document.write(e)
+        }
+
+    </script>
+</body>
+</html>

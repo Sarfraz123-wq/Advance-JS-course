@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one
+        {
+            height: 300px;
+            width: 600px;
+            background-color: rgb(150, 150, 67);
+        }
+        #two
+        {
+            height: 240px;
+            width: 500px;
+            background-color: rgb(75, 182, 137);
+        }#three
+        {
+            height: 200px;
+            width: 400px;
+            background-color: rgb(204, 204, 192);
+        }#four
+        {
+            height: 160px;
+            width: 350px;
+            background-color: rgb(118, 135, 231);
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Capture & Bubbling</h1>
+    <div id="one">1
+    <div id="two">2
+    <div id="three">3
+    <div id="four">4</div></div></div></div>
+    
+    <script>
+        //Bubbling Phase bottom to top kam karta he or
+        // ye by default hota he. or isme false likhte hain
+        // jab k capture top to btm kam karta he or true likhte
+        //hain.
+        // document.getElementById('one').addEventListener('click',function()
+        // {
+        //     alert('1');
+        // },false);
+        // document.getElementById('two').addEventListener('click',function()
+        // {
+        //     alert('2');
+        // },false);
+        // document.getElementById('three').addEventListener('click',function()
+        // {
+        //     alert('3');
+        // },false);
+        // document.getElementById('four').addEventListener('click',function()
+        // {
+        //     alert('4');
+        // },false);
+        // mene yahan false likh he matlab ye bubbling he agar me 
+        // four wali div pe click karta hn to ye 4 3 2 1 print kr
+        // raha he agar me 2 pe click krta hn to 2 1 print karta he
+        // agar 1 wali div pe click krta hn srf 1 q k ye btm to top kam
+        // kr raha he...
+
+        // Capture Event..
+
+        document.getElementById('one').addEventListener('click',function()
+        {
+            alert('1');
+        },true);
+        document.getElementById('two').addEventListener('click',function()
+        {
+            alert('2');
+        },true);
+        document.getElementById('three').addEventListener('click',function()
+        {
+            alert('3');
+        },true);
+        document.getElementById('four').addEventListener('click',function()
+        {
+            alert('4');
+        },true);
+        // ye uska opposite he 4 ki div ko click karta hn to 1 2 3 4
+        // print krta he ooper se niche tak
+
+
+    </script>
+</body>
+</html>
