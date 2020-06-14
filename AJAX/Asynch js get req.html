@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- api kya he?
+har wo cheez jo kam asan kare api he. ghnto ka kam minto me kare api he
+openweather se data utha k app banana api he payment gateway se payment
+process site pe lagana api he and so on
+what is rest api?
+http k sath khelne ko rest api kehte hain  -->
+
+    <button id="mybtn"> Fetch Data</button>
+    <div id="info"></div>
+    <!-- ye is lye q k hmen docmnt me b print krna he. inner.html se ${} use kr k. -->
+
+    <input type="text" id="myinput">
+    <!-- for inp city -->
+    <script>
+        // document.getElementById('mybtn').onclick = ()=>{
+        //     // fetch('url','get')
+        //    var x = fetch('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=ae8bbdf48b4b078d953937d13932cf99');
+        //    console.log(x);
+        // }//promise de raha he k me ye kam krnga lekin wait kro q k ye
+        // //async fetch async he ye time leta he.
+
+        
+        // document.getElementById('mybtn').onclick = ()=>{
+        //     // fetch('url')
+        //    fetch('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=x = ae8bbdf48b4b078d953937d13932cf99').then(data =>{
+        // //        console.log(data.json());//phir se promise de raha he.
+        //    });
+
+        // }
+
+
+            
+        // document.getElementById('mybtn').onclick = ()=>{
+        //     // fetch('url')
+        //    fetch('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=ae8bbdf48b4b078d953937d13932cf99').then(data =>{
+        //        return data.json()
+        //    }).then(data2 =>{
+        //        console.log(data2)
+        //    });//292 de raha he.
+        // }
+
+
+
+            
+            
+            //city k bad hm unit likhte hain & laga kr units=metric&
+            // back tick laga k hm jo inp city lenge usko yaha rakhdenge.
+            document.getElementById('mybtn').onclick = ()=>{
+            var inp = document.getElementById('myinput').value;
+            // console.log(inp); sahih he.
+            // fetch('url','get')
+           fetch(`http://api.openweathermap.org/data/2.5/weather?q=${inp}&units=metric&APPID=ae8bbdf48b4b078d953937d13932cf99`).then(data =>{
+               return data.json()
+           }).then(data2 =>{
+                 //console.log(data2);//only main secttion
+               console.log(data2.name);//only city name
+               console.log(data2.main.temp);//only city temp
+               console.log(data2.weather[0].description);//
+            //   // console.log(data2.main);//only main secttion
+             
+             // Now print on the document.
+              document.getElementById('info').innerHTML = `
+        
+            <ul>
+            <li>City: ${data2.name}</li>
+            <li>Temp in C: ${data2.main.temp} </li>
+            <li>Description ${data2.weather[0].description} </li>
+        </ul>`
+
+           });//292 de raha he.
+        }
+
+
+
+       
+
+        
+        
+
+
+    </script>
+
+</body>
+</html>

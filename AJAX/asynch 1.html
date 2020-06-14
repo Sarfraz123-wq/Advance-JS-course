@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- api kya he?
+har wo cheez jo kam asan kare api he. ghnto ka kam minto me kare api he
+openweather se data utha k app banana api he payment gateway se payment
+process site pe lagana api he and so on
+what is rest api?
+http k sath khelne ko rest api kehte hain  -->
+
+    <button id="mybtn"> Fetch Data</button>
+    <script>
+        document.getElementById('mybtn').onclick = ()=>{
+            // fetch('url')
+            fetch('api.openweathermap.org/data/2.5/find?q=London&units=metric').then(data =>{
+                return data.json()
+            }).then(data2 =>{
+                console.log(data2)
+            })
+
+        }
+    </script>
+
+</body>
+</html>
