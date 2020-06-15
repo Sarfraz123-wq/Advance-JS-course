@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <picture>
+        <!-- <source
+        media="(min-width: 968px)"
+        srcset="../3.jpg"
+        />
+
+        <source
+        media="(min-width: 360px)"
+        srcset="../dark mode.PNG"
+        />
+        <img src="../IMG-20190201-WA0072.jpg" alt="">
+            
+    </picture> 
+    works as media queries.
+    -->
+    <script>
+        
+        // Amateur.
+        // let hungary = true;
+        // let eat;
+        // if(hungary == true){
+        //     eat = 'yes';
+        // }
+        // else
+        // {
+        //     eat = 'no';
+        // }
+        // document.write(eat)
+        // Ternary Operators..
+        
+        // let hungary = true;
+        // let eat = hungary == true ? 'yes' : 'no';
+        // document.write(eat)
+
+        // Number to string..
+
+        //simple
+        // let num = 15;
+        // let s = num.toString();// num to string
+        // let n = Number(s)// string to number..
+        // document.write(typeof(s)+"<br>");
+        // document.write(typeof(n)+"<br>");
+
+        // // Pro
+        // let numb = 15;
+        // let st = numb + ""; // numb to str
+        // let nu = +st; // str to no;
+        // document.write(typeof(st)+"<br>");
+        // document.write(typeof(nu)+"<br>");
+        // document.write("--------------------------<br>")
+
+        // // populating an array simple.
+        // let array = [1,2,3,4];
+        // for(let  i=00; i<array.length;i++){
+        //     filledArray[i] = {'hello' :'goodboy' };
+        // }
+        // document.write(array)
+
+
+        // possible ways to remove duplicates from array..
+
+        var arr = [1,2,1,2,3,4,5,4,5,6,7,8,9];
+        var newArr = [];
+        
+        // for(var i =0; i<arr.length;i++){
+        //     if(newArr.indexOf(i.value) === -1){
+        //         newArr.push(i.value);
+        //     }
+        // }//wrong way
+        //document.write(newArr);
+
+        arr.forEach(item => {
+            if(newArr.indexOf(item) === -1){
+                newArr.push(item);
+            }
+        });
+
+        document.write(newArr);//write way..
+            document.write("<br>")
+        //Most efficient way..
+        var arr = [1,2,1,2,3,4,5,4,5,6,7,8,9];
+        var newAr = [... new Set(arr)];
+        document.write(newAr)
+            document.write("<br>")
+        //Remove invalid values from an array. Without any conditions. But be careful with zero. Because as per Javascript, zero will be consider as a falsy value..
+       document.write("Remove Invalidd Elements1: ")
+       //but keep in mind it keeps string and true not false.. 
+        var array = [undefined,null,'',NaN,1,2,true];
+        var newArr = array.filter(Boolean);
+        document.write(newArr);
+            document.write("<br>")
+        //Possible ways to clone/copy the array.
+        var array = [1,2,3,4,5];
+        var newArr = [];
+        array.forEach(item =>{
+            //if(newArr.indexOf(item)===-1) // condition for removing
+            //duplicates...
+            newArr.push(item);
+        })
+        document.write(newArr)//
+        //forEach callback function as a parameter leta he or wo as it is aray print krta he. jo b item me as it is array aayegi wo newArr me push krdo..
+        document.write("<br>")
+        var array = [1,2,3,4,5];
+        var newArr = array.slice();//no starting and ending mention...
+        document.write(newArr);
+        document.write("<br>")
+        var newArray = [...array];//iska mtlab he [...]copy
+        [... new Set] // matlab duplicte delete krdo.. S capital
+        document.write(newArray);
+        document.write("<br>")
+        var array = [1,2,3,4,5];
+        var newA = Array.from(array);
+        document.write(newA)
+        document.write("<br>")
+
+        // Swap numbers..
+        var num1 = 1;
+        var num2 = 2;
+        let temp = num1;
+        num1 = num2;
+        num2 = temp;
+        document.write(num1+","+num2);
+        document.write("<br>")
+        //Pro..
+        var num1 = 1;
+        var num2 = 2;
+        [num2,num1] = [num1,num2];
+        document.write(num1+","+num2);//hogaya swap
+        document.write("<br>");
+        // Map and Alternative for map
+        // Both methods will return same output and also both methods will return new array.
+        var arr = [1,2,3];
+        var newArr = arr.map(item=> item*2 )
+        document.write(newArr);//aik parameter he item to () nahi lagegi or {} b nai return b nahi....
+        document.write("<br>");
+        var arr = [1,2,3];
+        var newArr = Array.from(arr, item=>item*2);
+        document.write(newArr);
+        //Array.from 2 parameters leta he pehle jis aray ko karna he or doosra callback fn.
+
+        //Array methods...
+        //map se marzi se output le sakte hain matlab cuurnt array *2 ya /2 etc.
+        // filter me test pass krne k bad wo cheeez return hoti he.
+        // reduce sab ka combination return karta he jese fruits me fruitt chaat..
+        document.write("<br>")
+        //JS Challenge..
+        // Which is wrong syntax.
+        
+        //var fn1 = ()=>  'JavaScript everywhere!';
+        //sahih aa
+        
+        //var fn2 = (a) => 'JavaScript everywhere2!';
+        //sahih aa
+        
+        //var fn3 = a => 'JavaScript everywhere3!';
+        //sahih aa.
+        // var fn4 = (c,d) =>  {return'JavaScript everywhere!'};
+        //ghalat aa
+       // var fn4 = (c,d) => return'JavaScript everywhere!';
+        //correct version.
+      // document.write(fn1());
+        //document.write(fn2());
+       // document.write(fn3());
+        //document.write(fn4());
+
+        //Conclusion...
+        //agar single line of statemnt huje ta return {} likhana g zaroorat nahe however agar single param huje ta {} likhaun tha ta return likhan lazmi aaa
+        //ain akhiri agar more than one parametters an ta () parenethesis j andar parameters likhba in ain return ain {} marzi aaa .....
+
+        //Whaat's the output..
+        function test(...args1){
+            return args1.map(function (a){
+                return a+2
+            })
+        }
+        document.write(test(1,2,3,4,5));//3 4 5 6 7
+        document.write("<br>")
+        var filterObj = () =>{
+            return 'JavaScript';
+        }
+        document.write(typeof(filterObj));//function
+        document.write("<br>")
+        var test2 = (yes) =>{
+            let nestedFunction = (yes)=>{
+                return yes;
+            }
+            return nestedFunction(yes)
+        }
+        document.write(test2('HTML CSS'));
+        document.write("<br>")
+        let testdata = (a,b)=>{
+            return a,b// , pehle ko skip krta he 20 print
+            //return a + b;//30
+        }
+        document.write(testdata(10,20));
+
+
+        ()=>{
+         
+        document.write('java');}
+        document.write();
+    // ------------------------------
+    //How to delete property completely not as empty
+    var person = {
+        name: "Sarfraz",
+        age: 21,
+        likes: "18yo hot girls"
+    };
+    document.write("<br>")
+    delete person.likes;
+    document.write(person.likes)
+    document.write();
+    document.write("<br>")
+    //Output?
+    let myTest = 10;
+    if(true){
+        var testVar = 20;
+        let abc = 20;
+    }
+   // document.write(myTest,testVar,abc);
+    //Uncaught ReferenceError: abc is not defined.
+    //because let abc is blocked scope.. 
+    
+    //What is the output?
+    //console.log(console.log());//undefined//
+    // console.log(document.write('yes'));//undefined yes
+    // document.write('yes'+console.log())//yes undefined
+    //document.write("<br>")
+    //Write a program to separate integers from this array.
+//     var a = [1,2,'s',3,true,undefined,4,null];
+//   for(var j=0;j<a.length;j++){
+//       if(typeof(a[j]) == Number){
+//           document.write(a[j])
+//       }
+//       else
+//           document.write('ye')
+//   } ghalatt aaa.
+
+document.write('---------------------<br>');
+function bar(){
+    return foo;
+    foo = 10;
+    function foo(){
+
+    }
+    var foo = '11';
+}
+document.write(typeof bar()+"<br>");//function
+//if we comment return foo then it is undefined.
+
+document.write("Conversion of objects to Array<br>")
+document.write("---------------------------------<br>")
+
+
+var human = {
+    One: 1,
+    Two: 2,
+    Three: 3
+};
+let key = Object.keys(human);
+document.write(key+"<br>");
+let val = Object.values(human);
+document.write(val+"<br>");
+let entry = Object.entries(human);
+document.write(entry+"<br>");
+
+document.write("Conversion of Arrays into Objects<br>")
+document.write("---------------------------------<br>")
+    
+let names = ['sarfraz','tahir','basit'];
+document.write(names+"<br>")
+document.write(typeof(names)+"<br>");//Here it shows object but we know
+//that in JS arrays are itself objects...
+document.write(names[1]);//tahir hence it is array.
+document.write("<br>")
+let obj = [...names];
+document.write(obj.Two);
+document.write("<br>")
+document.write(obj+"<br>")  
+document.write(typeof(obj)+"<br>"); 
+//It is converted into objects now we can use objects properties here as well.
+
+
+// Dynamic Properties in objects.
+let dynamic = "value";
+let user = {
+    id: 1,
+    [dynamic]: "other value"
+    //this is pro version
+};
+//document.write(dynamic)
+//user[dynamic] = "other value";
+//This is amateur
+document.write(user[dynamic]+"<br>")
+//--------------------------------------
+document.write("-------Output-----------<br>")
+//What is the output?
+document.write(x+"<br>");
+document.write("Still going..."+"<br>");
+var x = 1;
+document.write(x+"<br>");  
+
+// -------------------------------------
+
+let carObj = {
+    brand: "BMW",
+    mileage:20,
+    getMileage: function(){
+        document.write(this.mileage);
+    }
+};
+carObj.getMileage();//20
+document.write("<br>")
+
+let carObject = {
+    brand: "BMW",
+    mileage:20,
+    getMileage: () =>{
+        document.write(this.mileage);
+    }
+};
+carObject.getMileage();//undefined.
+//because arrow functions can't accept this keyword..
+document.write("<br>")
+//-------------------------------------------------------
+var x = 1;
+if(x==1){
+    var x = 2;
+    //agar yahan 
+    // let or const x = 2 hota to answer 1 he aata q k let or
+    //const blocked scope variables hain
+    //var global variable he.
+}
+document.write(x);//2
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
